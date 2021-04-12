@@ -14,16 +14,16 @@ export const Nav00DataSource = {
         name: 'item0',
         className: 'header0-item',
         children: {
-          href: 'https://www.cnblogs.com/ygjzs',
-          children: [{ children: '待定', name: 'text' }],
+          href: 'http://vhblog.ygjie.icu/',
+          children: [{ children: 'blog', name: 'text' }],
         },
       },
       {
         name: 'item1',
         className: 'header0-item',
         children: {
-          href: 'https://www.cnblogs.com/ycoder',
-          children: [{ children: '待定', name: 'text' }],
+          href: 'http://alert-doc.ygjie.icu/',
+          children: [{ children: 'alert', name: 'text' }],
         },
       },
       {

@@ -1,20 +1,20 @@
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
-import React from 'react';
-import { enquireScreen } from 'enquire-js';
+import React from "react";
+import { enquireScreen } from "enquire-js";
 
-import Nav0 from './Nav0';
-import Banner0 from './Banner0';
-import Content13 from './Content13';
-import Teams0 from './Teams0';
-import Feature2 from './Feature2';
-import Feature1 from './Feature1';
-import Feature5 from './Feature5';
-import Feature6 from './Feature6';
-import Footer1 from './Footer1';
+import Nav0 from "./Nav0";
+import Banner0 from "./Banner0";
+import Content13 from "./Content13";
+import Teams0 from "./Teams0";
+import Feature2 from "./Feature2";
+import Feature1 from "./Feature1";
+import Feature5 from "./Feature5";
+import Feature6 from "./Feature6";
+import Footer1 from "./Footer1";
 
 import {
-  Nav00DataSource,
+  // Nav00DataSource,
   Banner00DataSource,
   Content130DataSource,
   Teams00DataSource,
@@ -24,15 +24,15 @@ import {
   Feature50DataSource,
   Feature60DataSource,
   Footer10DataSource,
-} from './data.source';
-import './less/antMotionStyle.less';
+} from "./data.source";
+import "./less/antMotionStyle.less";
 
 let isMobile;
 enquireScreen((b) => {
   isMobile = b;
 });
 
-const { location = {} } = typeof window !== 'undefined' ? window : {};
+const { location = {} } = typeof window !== "undefined" ? window : {};
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -42,6 +42,109 @@ export default class Home extends React.Component {
       show: !location.port, // 如果不是 dva 2.0 请删除
     };
   }
+
+  //!test 需要将这些数据通过接口获得
+  Nav00DataSource = {
+    wrapper: { className: "header0 home-page-wrapper" },
+    page: { className: "home-page" },
+    logo: {
+      className: "header0-logo",
+      children:
+        "https://wx-xly-1301545895.cos.ap-beijing.myqcloud.com/my-website/logo.png",
+      href: "http://www.ygjie.icu",
+    },
+    Menu: {
+      className: "header0-menu",
+      children: [
+        {
+          name: "item0",
+          className: "header0-item",
+          children: {
+            href: "http://vhblog.ygjie.icu/",
+            children: [{ children: "blog", name: "text" }],
+          },
+        },
+        {
+          name: "item1",
+          className: "header0-item",
+          children: {
+            href: "http://alert-doc.ygjie.icu/",
+            children: [{ children: "alert", name: "text" }],
+          },
+        },
+        {
+          name: "item2",
+          className: "header0-item",
+          children: {
+            href: "http://doc1.ygjie.icu/",
+            children: [{ children: "文档", name: "text" }],
+          },
+        },
+        {
+          name: "item3",
+          className: "header0-item",
+          children: {
+            children: [{ children: "控制台", name: "text" }],
+          },
+          subItem: [
+            {
+              name: "sub0",
+              className: "item-sub",
+              children: {
+                className: "item-sub-item",
+                href: "http://mymaster.ygjie.icu/",
+                children: [
+                  // {
+                  //   name: 'image0',
+                  //   className: 'item-image',
+                  //   children:
+                  //     'https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg',
+                  // },
+                  {
+                    name: "title",
+                    className: "item-title",
+                    children: "地址一",
+                  },
+                  // {
+                  //   name: 'content',
+                  //   className: 'item-content',
+                  //   children: '无',
+                  // },
+                ],
+              },
+            },
+            {
+              name: "sub1",
+              className: "item-sub",
+              children: {
+                className: "item-sub-item",
+                href: "http://serveless_mymaster.ygjie.icu/",
+                children: [
+                  // {
+                  //   name: 'image0',
+                  //   className: 'item-image',
+                  //   children:
+                  //     'https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg',
+                  // },
+                  {
+                    name: "title",
+                    className: "item-title",
+                    children: "地址二",
+                  },
+                  // {
+                  //   name: 'content',
+                  //   className: 'item-content',
+                  //   children: '无',
+                  // },
+                ],
+              },
+            },
+          ],
+        },
+      ],
+    },
+    mobileMenu: { className: "header0-mobile-menu" },
+  };
 
   componentDidMount() {
     // 适配手机屏幕;
@@ -66,7 +169,7 @@ export default class Home extends React.Component {
       <Nav0
         id="Nav0_0"
         key="Nav0_0"
-        dataSource={Nav00DataSource}
+        dataSource={this.Nav00DataSource}
         isMobile={this.state.isMobile}
       />,
       <Banner0
